@@ -59,9 +59,12 @@ cur.execute(SQL1,data1)
 cur.execute(SQL2,data2)
 # fetch results from the database
 cur.execute('SELECT * FROM Teacher;')
+result1 = cur.fetchall()
+print('Teacher table: ',result1)
+
 cur.execute('SELECT * FROM Student;')
-result = cur.fetchmany(3)
-print(result)
+result2 = cur.fetchall()
+print('Student table: ',result2)
 
 # commit the transaction to the db
 conn.commit()

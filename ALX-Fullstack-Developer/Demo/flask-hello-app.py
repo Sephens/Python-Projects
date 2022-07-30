@@ -10,3 +10,6 @@ app = Flask(__name__)
 # define some methods that will act as the route handler
 def index():
     return('Hello world')
+
+# Run a flask application in terminal by:
+# FLASK_APP=app_name flask run

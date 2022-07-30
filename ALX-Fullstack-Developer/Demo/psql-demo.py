@@ -35,7 +35,7 @@ CREATE TABLE Teacher(
 
 cur.execute('''
 CREATE TABLE Staff(
-    staff_id INTERGER PRIMARY KEY,
+    staff_id INTEGER PRIMARY KEY,
     staff_name VARCHAR NOT NULL,
     DOB date NOT NULL,
     staff_cat VARCHAR NOT NULL

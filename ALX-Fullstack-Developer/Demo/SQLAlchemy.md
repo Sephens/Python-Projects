@@ -22,4 +22,6 @@ followed by an at sign
 The name of the host location where your database is located.
 For us our database server is located on our local machine. So we will just pass it in either localhost or 127.0.0.1.
 Specify which port you'd like to connect to by default, 5432 for database connections.
-Finally, followed by a slash and then specify the name of the particular database that exists on the server located at this host and connecting on this port, logging in with this username and password, and using this particular database system.
+Finally, followed by a slash and then specify the name of the particular database that exists on the server located at this host and connecting on this port, logging in with this username and password, and using this particular database system. See the image below:
+
+![database-connection-uri-parts](https://user-images.githubusercontent.com/60733003/182041499-e122f18c-27db-4515-94ac-a37d91202820.png)

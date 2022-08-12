@@ -119,3 +119,47 @@ How to define constraints
 
 ![screen-shot-2019-08-19-at-12 00 00-am](https://user-images.githubusercontent.com/60733003/184358382-627795a8-9103-4d0d-bd6e-db91ecc4bfe9.png)
 
+### Model.query
+Takeaways
+```db.Model.query``` offers us the Query object. The Query object lets us generate ```SELECT``` statements that let us query and return slices of data from our database.
+Query allows method chaining. You can chain query methods to another (indefinitely), getting back more query objects, until you chain it with a terminal method that returns a non-query object like ```count()```, ```all()```, ```first()```, ```delete()```, etc.
+The Query object can be accessed on a model using either:
+MyModel.query directly on the model, or
+```db.session.query(MyModel)``` using ```db.session.query instead.```
+More methods:
+* MyModel.query.first()
+* MyModel.query.all()
+* MyModel.query.filter_by(my_table_attribute='some value')
+```MyModel.query.filter(MyOtherModel.some_attr='some value') OrderItem.query.filter(Product.id=3)```
+* MyModel.order_by(MyModel.created_at)
+* MyModel.order_by(db.desc(MyModel.created_at))
+* Order.query.limit(100).all()
+* query = Task.query.filter(completed=True)
+* query.count()
+* ```model_id = 3```
+```MyModel.query.get(model_id)```
+
+
+### SQLAlchemy Object Lifecycle — Part 1
+* NB 
+We can insert new records into the database using SQLAlchemy by running
+```person = Person(name='Amy')```
+```db.session.add(person)```
+```db.session.commit()```
+
+#### Takeaways
+Within a session, we create transactions every time we want to commit work to the database.
+Proposed changes are not immediately committed to the database and instead, go through stages to allow for undos.
+The ability to undo is allowed via db.session.rollback()
+Stages:
+Transient: an object exists, it was defined....but not attached to a session or database (yet).
+Pending: Some type of action has occurred but we have not yet decided to make it permanent yet. An object was attached to a session. "Undo" becomes available via db.session.rollback(). This means we can still clear any work that has been done so far. An object stays in this state until a flush happens!
+Flushed: Translating actions(pending changes) into SQL commands that are ready to be committed. Nothing happens in the actual database yet. The only thing that can do that is 'commit'
+Committed: manually called for all pending changes to persist to the database permanently.
+
+* A ```flush``` takes pending changes and translates them into commands ready to be committed. 
+* It occurs:
+* when you call Query. Or on db.session.commit()
+A commit leads to persisted changes on the database + lets the db.session start with a new transaction.
+
+When a statement has been flushed already, SQLAlchemy knows not to do the work again of translating actions to SQL statements.

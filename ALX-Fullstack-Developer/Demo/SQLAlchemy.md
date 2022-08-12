@@ -22,6 +22,7 @@ followed by an at sign
 The name of the host location where your database is located.
 For us our database server is located on our local machine. So we will just pass it in either localhost or 127.0.0.1.
 Specify which port you'd like to connect to by default, 5432 for database connections.
+<<<<<<< HEAD
 Finally, followed by a slash and then specify the name of the particular database that exists on the server located at this host and connecting on this port, logging in with this username and password, and using this particular database system.
 
 ### Running the flask app: Terminal (option 1)
@@ -37,3 +38,8 @@ We run a flask app defined at app.py by running this line of code on one line
 Make sure you are in the directory that contains app.py
 Do not enter any of the flask code mentioned in option 1
 Simply include the following in your python file
+=======
+Finally, followed by a slash and then specify the name of the particular database that exists on the server located at this host and connecting on this port, logging in with this username and password, and using this particular database system. See the image below:
+
+![database-connection-uri-parts](https://user-images.githubusercontent.com/60733003/182041499-e122f18c-27db-4515-94ac-a37d91202820.png)
+>>>>>>> 91bc2ccb4706e5a064c4b0e2eb30f6b4629df3f9

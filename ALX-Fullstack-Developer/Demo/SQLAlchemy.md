@@ -89,3 +89,11 @@ Use the Flask-SQLAlchemy documentation site to learn about data types generally 
 
 ![screen-shot-2019-08-18-at-11 36 57-pm](https://user-images.githubusercontent.com/60733003/184356458-6b11594f-6eaa-4eb2-860b-abaa036e702f.png)
 
+### SQLAlchemy Constraints
+
+Takeaways
+Column constraints ensure data integrity across our database, allowing for database accuracy and consistency.
+Constraints are conditions on your column, that provide checks on the data's validity. It does not allow data that violates constraints to be inserted into the database (it will raise an error if you attempt to).
+In SQLAlchemy, constraints are set in ```db.Column()``` after setting the data type.
+nullable=False is equivalent to ```NOT NULL``` in SQL
+```unique=True``` is equivalent to ```UNIQUE``` in ```SQL```

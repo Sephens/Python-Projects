@@ -11,7 +11,7 @@ How models are defined
 How data types are handled
 How to define constraint
 
-# How to use SQLAlchemy
+## How to use SQLAlchemy
 Import the Flask-SQLAlchemy library.
 Connect to our database from our Flask application
 Set a configuration variable on our application by using the dictionary app.config. Flask-SQLAlchemy expects a configuration variable called, "SQLALCHEMY_DATABASE_URI".

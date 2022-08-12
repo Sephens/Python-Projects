@@ -97,3 +97,14 @@ Constraints are conditions on your column, that provide checks on the data's val
 In SQLAlchemy, constraints are set in ```db.Column()``` after setting the data type.
 nullable=False is equivalent to ```NOT NULL``` in SQL
 ```unique=True``` is equivalent to ```UNIQUE``` in ```SQL```
+
+### SUMMARY
+
+How the components of SQL Alchemy and ORM are structured
+What are dialects
+What is a connection pool
+How does the core engine work
+How classes and tables are mapped
+How models are defined
+How data types are handled
+How to define constraints

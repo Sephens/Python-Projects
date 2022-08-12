@@ -43,3 +43,46 @@ Do not enter any of the flask code mentioned in option 1
 Simply include the following in your python file
 =======
 Finally, followed by a slash and then specify the name of the particular database that exists on the server located at this host and connecting on this port, logging in with this username and password, and using this particular database system. See the image below:
+
+### Takeaways
+Given an instance of the SQLAlchemy class from Flask-SQLAlchemy,
+
+db = SQLAlchemy(app)
+db is an interface for interacting with our database
+db.Model lets us create and manipulate data models
+db.session lets us create and manipulate database transactions
+
+### Takeaways
+Declaring classes
+class MyModel```(db.Model)``` will inherit from ```db.Model```
+By inheriting from ```db.Model```, we map from our classes to tables via SQLAlchemy ORM
+Defining columns
+Within our class, we declare attributes equal to ```db.Column(...)```
+db.Column takes ```<datatype>, <primary_key?>, <constraint?>, <default?>```
+Table naming
+By default, SQLAlchemy will pick the name of the table for you, setting it equal to the lower-case version of your class's name. Otherwise, we set the name of the table using``` __tablename__ = 'my_custom_table_name'.```
+
+db.create_all() actually creates that tables based on the db.Model that was configured with the associated table
+
+### SQLAlchemy Data Types
+SQLAlchemy has its own data types that we should become familiar with. In SQLAlchemy, there is a one-to-one parity between an SQLAlchemy datatype and the data type that would be understandable in the semantics of the particular database system that you're linking your SQLAlchemy engine to.
+
+db.integer, that's the integer type for the database system that we're using.
+db.string, where you can optionally pass in a number that represents the maximum length of that string should be. For Postgress in particular, we're able to specify a variable character string, so we can omit the size variable, so that setting db.string with nothing in it, specifies a varchar data fields.
+db.text for longer text
+db.DateTime for date time objects
+floats
+Booleans
+PickleTypes
+large binaries for storing large binary data or pickled Python objects.
+
+
+We generally don't need to memorize these SQLAlchemy datatypes, but keep this in mind as a reference, as you're figuring out how to define your models in your application.
+
+Resources
+Flask-SQLAlchemy: Declaring Models
+See some examples including one-many and many-many relationships
+Getting Started with PostgreSQL Data Types
+Find out more about data types including Boolean, character, numeric, temporal, array, json, uuid, and special types.
+Column and Data Types
+Use the Flask-SQLAlchemy documentation site to learn about data types generally mapping to SQLAlchemy's library of data types.

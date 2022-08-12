@@ -86,3 +86,6 @@ Getting Started with PostgreSQL Data Types
 Find out more about data types including Boolean, character, numeric, temporal, array, json, uuid, and special types.
 Column and Data Types
 Use the Flask-SQLAlchemy documentation site to learn about data types generally mapping to SQLAlchemy's library of data types.
+
+![screen-shot-2019-08-18-at-11 36 57-pm](https://user-images.githubusercontent.com/60733003/184356458-6b11594f-6eaa-4eb2-860b-abaa036e702f.png)
+

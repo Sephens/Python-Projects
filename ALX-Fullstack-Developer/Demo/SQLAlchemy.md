@@ -108,3 +108,14 @@ How classes and tables are mapped
 How models are defined
 How data types are handled
 How to define constraints
+
+![sqlalchemy-layers](https://user-images.githubusercontent.com/60733003/184358136-2a642701-ae3e-45cf-bd0c-03e1460cd1a8.png)
+
+![screen-shot-2019-08-18-at-11 58 46-pm](https://user-images.githubusercontent.com/60733003/184358228-d740a746-f6a3-443c-999d-58d85b569a64.png)
+
+
+![screen-shot-2019-08-18-at-11 59 53-pm](https://user-images.githubusercontent.com/60733003/184358299-b756ca50-158d-478f-bfc6-c733cdf3ab32.png)
+
+
+![screen-shot-2019-08-19-at-12 00 00-am](https://user-images.githubusercontent.com/60733003/184358382-627795a8-9103-4d0d-bd6e-db91ecc4bfe9.png)
+
